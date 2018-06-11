@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Вулиці Кропивницького</string>
-    <string name="app_name_subtitle">нові-старі назви</string>
+    <string name="app_name">Кропивницький</string>
+    <string name="app_name_subtitle">нові-старі назви вулиць</string>
+    <string name="street_old_name">street_old_value</string>
+    <string name="street_new_name">street_new_value</string>
+    <string name="search_string">search...</string>
+    <string name="refresh_string">Refresh</string>
 </resources>

@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun GetStreetsNames(){
-        var stringRequest = StringRequest(Request.Method.GET, JSON_URL,
+        val stringRequest = StringRequest(Request.Method.GET, JSON_URL,
             Response.Listener { response ->
                 try {
                     //getting the whole json object from the response
