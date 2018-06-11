@@ -10,7 +10,7 @@
         android:layout_width="374dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="Item Text"
+        android:text="@string/street_old_name"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="20sp" />
 
@@ -19,7 +19,7 @@
         android:layout_width="374dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="Item Text"
+        android:text="@string/street_new_name"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp" />
 
