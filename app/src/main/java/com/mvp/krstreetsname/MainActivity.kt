@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
     }
 
+    /**
+     *
+     */
     private fun initToolbar() {
         // Set the toolbar as support action bar
         setSupportActionBar(toolbar)
@@ -50,12 +53,18 @@ class MainActivity : AppCompatActivity() {
         //actionBar.setDisplayUseLogoEnabled(true)
     }
 
+    /**
+     *
+     */
     private fun initRecyclerView() {
         recyclerView = findViewById(R.id.streets_list) as RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         MsgUtils.writeLogMain("recyclerView init")
     }
 
+    /**
+     *
+     */
     fun GetStreetsNames(){
         val stringRequest = StringRequest(Request.Method.GET, JSON_URL,
             Response.Listener { response ->
@@ -107,6 +116,9 @@ class MainActivity : AppCompatActivity() {
         requestQueue.add(stringRequest)
     }
 
+    /**
+     *
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.searchfile,menu)
         val searchItem = menu?.findItem(R.id.search)
@@ -136,6 +148,9 @@ class MainActivity : AppCompatActivity() {
        // return super.onCreateOptionsMenu(menu)
     }
 
+    /**
+     *
+     */
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item!!.itemId) {
             R.id.refresh -> {
@@ -146,23 +161,38 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    /**
+     *
+     */
     fun isConnected(ctx : Context): Boolean {
         val cm = ctx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork = cm.activeNetworkInfo
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting
     }
 
+    /**
+     *
+     */
     override fun onResume() {
 
         MsgUtils.writeLogMain("on resume")
         initData()
         super.onResume()
     }
+
+    /**
+     *
+     */
     override fun onPause() {
         MsgUtils.writeLogMain("on pause")
         adapter.saveStreets()
         super.onPause()
     }
+
+    /**
+     *
+     */
     fun initData(){
         adapter = StreetsAdapter(StreetList, this)
         adapter.loadStreets()
@@ -173,6 +203,10 @@ class MainActivity : AppCompatActivity() {
             loadData()
         }
     }
+
+    /**
+     *
+     */
     fun loadData(){
         if (isConnected(this)) {
             GetStreetsNames()

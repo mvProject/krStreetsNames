@@ -18,14 +18,26 @@ class StreetsAdapter(var streets: MutableList<Streets>, var context: Context) : 
     override fun onBindViewHolder(holder: StreetsViewHolder, position: Int) {
         holder.bindNote(streets[position])
     }
+
+    /**
+     *
+     */
     fun saveStreets(){
         StreetsStorage.writeData(context,streets)
         MsgUtils.writeLogAdapter("data saved")
     }
+
+    /**
+     *
+     */
     fun loadStreets(){
         streets = StreetsStorage.readData(context)
         MsgUtils.writeLogAdapter("data loaded")
     }
+
+    /**
+     *
+     */
     fun findStreets(str : String) : MutableList<Streets>{
         MsgUtils.writeLogAdapter("data filtered")
         return streets.filter {it.oldName.contains(str,true) or it.newName.contains(str,true)} as MutableList

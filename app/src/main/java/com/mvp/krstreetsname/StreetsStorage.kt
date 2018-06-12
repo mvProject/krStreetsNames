@@ -8,7 +8,9 @@ import java.io.ObjectOutputStream
 
 object StreetsStorage {
     private val FILE_NAME = "street_list.ser"
-
+    /**
+     *
+     */
     fun writeData(context: Context, streets: List<Streets>) {
         var fos: FileOutputStream? = null
         var oos: ObjectOutputStream? = null
@@ -31,6 +33,10 @@ object StreetsStorage {
 
         }
     }
+
+    /**
+     *
+     */
     fun readData(context: Context): MutableList<Streets> {
         var fis: FileInputStream? = null
         var ois: ObjectInputStream? = null
@@ -42,7 +48,7 @@ object StreetsStorage {
             fis = context.openFileInput(FILE_NAME)
             ois = ObjectInputStream(fis)
 
-            streets = ois?.readObject() as MutableList<Streets>
+            streets = ois.readObject() as MutableList<Streets>
         } catch (e: Exception) {
             MsgUtils.writeLogStorage("Could not read from file.")
             MsgUtils.writeLogStorage(e.toString())
