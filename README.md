@@ -4,4 +4,4 @@
 ![alt text](https://github.com/mvProject/krStreetsNames/blob/master/Screenshots/com.mvp.krstreetsname.png "Main window")
 В главном окне отображается список улиц со старым и новым названием
 также присутствует поиск по обоим названиям
-![alt text]((https://github.com/mvProject/krStreetsNames/screenshots/com.mvp.krstreetsname2.png "Search streets")
+![alt text]((https://github.com/mvProject/krStreetsNames/blob/master/screenshots/com.mvp.krstreetsname2.png "Search streets")
